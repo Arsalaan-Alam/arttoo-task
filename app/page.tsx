@@ -22,17 +22,16 @@ export default function Home() {
 				) : (
 					<p>Wallet not connected</p>
 				)}
-
 			</div>
 
 			<div className="flex flex-wrap gap-4 mt-4">
 				<button
 					onClick={() => router.push('/connect')}
 					disabled={isAuthenticated}
-					className={`px-6 py-2 rounded transition ${
+					className={`px-6 py-2 rounded-md font-medium transition border-2 ${
 						isAuthenticated
-							? 'bg-blue-300 text-white cursor-not-allowed'
-							: 'bg-blue-600 text-white hover:bg-blue-700 cursor-pointer'
+							? 'border-blue-200 text-blue-200 cursor-not-allowed'
+							: 'border-blue-600 text-blue-600 hover:bg-blue-50 cursor-pointer'
 					}`}
 				>
 					{account?.address ? 'Connected' : 'Connect Wallet'}
@@ -41,10 +40,10 @@ export default function Home() {
 				<button
 					onClick={() => router.push('/verify')}
 					disabled={!isAuthenticated}
-					className={`px-6 py-2 rounded transition ${
+					className={`px-6 py-2 rounded-md font-medium text-white transition ${
 						!isAuthenticated
-							? 'bg-green-300 text-white cursor-not-allowed'
-							: 'bg-green-600 text-white hover:bg-green-700 cursor-pointer'
+							? 'bg-blue-200 cursor-not-allowed'
+							: 'bg-blue-600 hover:bg-blue-700 cursor-pointer'
 					}`}
 				>
 					Verify JWT
@@ -53,10 +52,10 @@ export default function Home() {
 				<button
 					onClick={logout}
 					disabled={!isAuthenticated}
-					className={`px-6 py-2 rounded transition ${
+					className={`px-6 py-2 rounded-md font-medium text-white transition ${
 						!isAuthenticated
-							? 'bg-red-300 text-white cursor-not-allowed'
-							: 'bg-red-600 text-white hover:bg-red-700 cursor-pointer'
+							? 'bg-slate-300 cursor-not-allowed'
+							: 'bg-slate-500 hover:bg-slate-600 cursor-pointer'
 					}`}
 				>
 					Disconnect
